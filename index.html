@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Menu mobile</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
 </head>
 <body>
 	
 <header>
 	<span class="menu-anchor"></span>
-  	<h1><a href="http://tableless.com.br">tableless.com.br</a></h1>
+  	<h1>tableless.com.br</h1>
 </header>
 
 <menu>
@@ -38,10 +39,10 @@
 </section>
 
 <script type="text/javascript">
- // 	$('.menu-anchor').on('click touchstart', function(e){
- // 	$('html').toggleClass('menu-active');
- //   	e.preventDefault();
- // });
+ 	$('.menu-anchor').on('click touchstart', function(e){
+ 	$('html').toggleClass('menu-active');
+   	e.preventDefault();
+ });
 </script>	
 
 </body>
