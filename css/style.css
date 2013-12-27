@@ -4,6 +4,9 @@
 	padding: 0;
 }
 
+/* Isto é necessário para não haver rolagens horizontais quando movermos os elementos */
+html, body {overflow-x: hidden;}
+
 body {
 	font: 100% arial, verdana, tahoma, sans-serif;
 	color: #FFF;
@@ -66,7 +69,8 @@ menu {
 	height: 100%;
 	padding-top: 10px;
 	background: #d55401;
-	box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
+	box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3)
+
 }
 
 menu li a {
@@ -83,17 +87,42 @@ menu li a:hover {
 	color: #d55401;
 }
 
-/* posicionando pra fora do viewport */
-.menu {
-   left: -220px;
-	-webkit-transition: left .25s linear;
-	-moz-transition: left .25s linear;
-	-o-transition: left .25s linear;
-	-ms-transition: left .25s linear;
-	transition: left .25s linear;
+
+/*
+	Aqui você esconde o menu para fora da tela 
+	O valor é exatamente a largura da sidebar
+*/
+menu {
+	-webkit-transform: translateX(-220px);
+	-moz-transform: translateX(-220px);
+	-ms-transform: translateX(-220px);
+	transform: translateX(-220px);
 }
- 
-/* quando o script inserir a classe, nós retornamos o menu para a posição original */
-.menu-active .menu {
-   left: 0;
+
+/*
+	Essa é a posição original do HEADER e do MAIN
+*/
+header, .main {
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+
+/*
+   Com a classe menu-active na tag HTML
+*/
+.menu-active menu {
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+
+.menu-active header, 
+.menu-active .main {
+	-webkit-transform: translateX(220px);
+	-moz-transform: translateX(220px);
+	-ms-transform: translateX(220px);
+	transform: translateX(220px);
 }
