@@ -86,7 +86,11 @@ menu li a:hover {
 /* posicionando pra fora do viewport */
 .menu {
    left: -220px;
-   transition: left .25s linear;
+	-webkit-transition: left .25s linear;
+	-moz-transition: left .25s linear;
+	-o-transition: left .25s linear;
+	-ms-transition: left .25s linear;
+	transition: left .25s linear;
 }
  
 /* quando o script inserir a classe, nós retornamos o menu para a posição original */
